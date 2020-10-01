@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
-import CoreData
 import CoreLocation
 import Combine
+import MapKit
 
 struct ContentView: View {
     
@@ -30,7 +30,9 @@ struct ContentView2: View {
     
     @State var locationString = "Lat/Lon"
     @State var speedString = "–"
-    @State var courseString = "–º"
+    @State var courseString = "–"
+    
+    @State var currentRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     var body: some View {
         
@@ -42,24 +44,46 @@ struct ContentView2: View {
                 Spacer()
                 
                 VStack(alignment: .trailing) {
-                    Text("\(speedString)").font(.system(size: 64, weight: .black, design: .monospaced))
-                    Text("km/h").font(.system(size: 17, weight: .black, design: .monospaced))
+                    Text("\(speedString)").font(.system(size: 64, weight: .black, design: .rounded))
+                        .foregroundColor(.white)
+                    Text("km/h").font(.system(size: 17, weight: .black, design: .rounded))
+                        .foregroundColor(.gray)
                 }
                 
                 VStack(alignment: .trailing) {
-                    Text("\(courseString)").font(.system(size: 64, weight: .black, design: .monospaced))
-                    Text("Degrees").font(.system(size: 17, weight: .black, design: .monospaced))
+                    Text("\(courseString)").font(.system(size: 64, weight: .black, design: .rounded))
+                        .foregroundColor(.white)
+                    Text("Course Degrees").font(.system(size: 17, weight: .black, design: .rounded))
+                        .foregroundColor(.gray)
                 }
                 
-                Spacer()
+                VStack(alignment: .trailing) {
+                    Text("–").font(.system(size: 64, weight: .black, design: .rounded))
+                        .foregroundColor(.white)
+                    Text("Active Calories Burned").font(.system(size: 17, weight: .black, design: .rounded))
+                        .foregroundColor(.gray)
+                }
+                
+                VStack(alignment: .trailing) {
+                    Text("–").font(.system(size: 64, weight: .black, design: .rounded))
+                        .foregroundColor(.white)
+                    Text("Time of Workout").font(.system(size: 17, weight: .black, design: .rounded))
+                        .foregroundColor(.gray)
+                }
+                
+                
+                Map(coordinateRegion: $currentRegion)
+                    .cornerRadius(25)
+                
                 
                 Text("Location \(locationString)")
-                    .font(.footnote)
+                    .font(.system(size: 10, weight: .black, design: .rounded))
                     .multilineTextAlignment(.center)
                     .foregroundColor(.gray)
             }
-            .foregroundColor(.white)
+            .padding()
             .onReceive(location) { location in
+                currentRegion = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
                 courseString = location.course >= 0 ? "\(numberFormatter.string(from: NSNumber(value: location.course)) ?? "/")" : "–"
                 speedString = location.speed >= 0 ? "\(numberFormatter.string(from: NSNumber(value: Double(location.speed * 3.6))) ?? "/")" : "–"
                 locationString = String(format: "%.5f,%.5f %@", location.coordinate.latitude, location.coordinate.longitude, location.timestamp.description)
