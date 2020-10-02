@@ -30,7 +30,7 @@ extension CLLocationManager {
             subscriber.receive(subscription: subscription)
         }
         
-        final class LocationSubscription<S: Subscriber> : NSObject, CLLocationManagerDelegate, Subscription where S.Input == Output, S.Failure == Failure{
+        final class LocationSubscription<S: Subscriber> : NSObject, CLLocationManagerDelegate, Subscription where S.Input == Output, S.Failure == Failure {
             var subscriber: S
             var locationManager = CLLocationManager()
             
@@ -38,6 +38,7 @@ extension CLLocationManager {
                 self.subscriber = subscriber
                 super.init()
                 locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             }
 
             func request(_ demand: Subscribers.Demand) {

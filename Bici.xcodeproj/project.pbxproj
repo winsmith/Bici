@@ -11,7 +11,7 @@
 		DCE0365B2526267800D68D34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0365A2526267800D68D34 /* ContentView.swift */; };
 		DCE0365D2526267900D68D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCE0365C2526267900D68D34 /* Assets.xcassets */; };
 		DCE036602526267900D68D34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCE0365F2526267900D68D34 /* Preview Assets.xcassets */; };
-		DCE0366A252627A000D68D34 /* LocationHeadingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE03669252627A000D68D34 /* LocationHeadingProxy.swift */; };
+		DCE0366A252627A000D68D34 /* CLLocationManager+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE03669252627A000D68D34 /* CLLocationManager+Publisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		DCE0365C2526267900D68D34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCE0365F2526267900D68D34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DCE036612526267900D68D34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCE03669252627A000D68D34 /* LocationHeadingProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHeadingProxy.swift; sourceTree = "<group>"; };
+		DCE03669252627A000D68D34 /* CLLocationManager+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Publisher.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 				DCE0365C2526267900D68D34 /* Assets.xcassets */,
 				DCE036612526267900D68D34 /* Info.plist */,
 				DCE0365E2526267900D68D34 /* Preview Content */,
-				DCE03669252627A000D68D34 /* LocationHeadingProxy.swift */,
+				DCE03669252627A000D68D34 /* CLLocationManager+Publisher.swift */,
 			);
 			path = Bici;
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE0366A252627A000D68D34 /* LocationHeadingProxy.swift in Sources */,
+				DCE0366A252627A000D68D34 /* CLLocationManager+Publisher.swift in Sources */,
 				DCE0365B2526267800D68D34 /* ContentView.swift in Sources */,
 				DCE036592526267800D68D34 /* BiciApp.swift in Sources */,
 			);
