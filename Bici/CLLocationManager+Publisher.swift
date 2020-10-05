@@ -15,6 +15,7 @@
 import Foundation
 import Combine
 import CoreLocation
+import UIKit
 
 extension CLLocationManager {
     public static func publishLocation() -> LocationPublisher{
@@ -54,6 +55,8 @@ extension CLLocationManager {
                 for location in locations {
                     _ = subscriber.receive(location)
                 }
+                
+                TelemetryManager.shared.send(.gpsUpdateReceived, for: UIDevice.current.identifierForVendor?.uuidString ?? "!")
             }
         }
     }

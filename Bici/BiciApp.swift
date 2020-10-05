@@ -12,6 +12,9 @@ struct BiciApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear() {
+                    TelemetryManager.shared.send(.appLaunchedRegularly, for: UIDevice.current.identifierForVendor?.uuidString ?? "!")
+                }
         }
     }
 }

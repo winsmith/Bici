@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DCD6F874252B411B0029E95B /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD6F873252B411B0029E95B /* Telemetry.swift */; };
 		DCE036592526267800D68D34 /* BiciApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE036582526267800D68D34 /* BiciApp.swift */; };
 		DCE0365B2526267800D68D34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0365A2526267800D68D34 /* ContentView.swift */; };
 		DCE0365D2526267900D68D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCE0365C2526267900D68D34 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DCD6F873252B411B0029E95B /* Telemetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Telemetry.swift; sourceTree = "<group>"; };
 		DCE036552526267800D68D34 /* Bici.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bici.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE036582526267800D68D34 /* BiciApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiciApp.swift; sourceTree = "<group>"; };
 		DCE0365A2526267800D68D34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		DCE036572526267800D68D34 /* Bici */ = {
 			isa = PBXGroup;
 			children = (
+				DCD6F873252B411B0029E95B /* Telemetry.swift */,
 				DCE036582526267800D68D34 /* BiciApp.swift */,
 				DCE0365A2526267800D68D34 /* ContentView.swift */,
 				DCE0365C2526267900D68D34 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCE0366A252627A000D68D34 /* CLLocationManager+Publisher.swift in Sources */,
+				DCD6F874252B411B0029E95B /* Telemetry.swift in Sources */,
 				DCE0365B2526267800D68D34 /* ContentView.swift in Sources */,
 				DCE036592526267800D68D34 /* BiciApp.swift in Sources */,
 			);
@@ -284,7 +288,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.breakthesystem.Bici;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -306,7 +310,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.breakthesystem.Bici;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
