@@ -55,8 +55,6 @@ extension CLLocationManager {
                 for location in locations {
                     _ = subscriber.receive(location)
                 }
-                
-                TelemetryManager.shared.send(.gpsUpdateReceived, for: UIDevice.current.identifierForVendor?.uuidString ?? "!")
             }
         }
     }

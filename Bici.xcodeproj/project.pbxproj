@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		DCE0365D2526267900D68D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCE0365C2526267900D68D34 /* Assets.xcassets */; };
 		DCE036602526267900D68D34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCE0365F2526267900D68D34 /* Preview Assets.xcassets */; };
 		DCE0366A252627A000D68D34 /* CLLocationManager+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE03669252627A000D68D34 /* CLLocationManager+Publisher.swift */; };
+		DCEFEB02252DA55B00D46DE5 /* TelemetryClient in Frameworks */ = {isa = PBXBuildFile; productRef = DCEFEB01252DA55B00D46DE5 /* TelemetryClient */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCEFEB02252DA55B00D46DE5 /* TelemetryClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,9 @@
 			dependencies = (
 			);
 			name = Bici;
+			packageProductDependencies = (
+				DCEFEB01252DA55B00D46DE5 /* TelemetryClient */,
+			);
 			productName = Bici;
 			productReference = DCE036552526267800D68D34 /* Bici.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +123,9 @@
 				Base,
 			);
 			mainGroup = DCE0364C2526267800D68D34;
+			packageReferences = (
+				DCEFEB00252DA55B00D46DE5 /* XCRemoteSwiftPackageReference "SwiftClient" */,
+			);
 			productRefGroup = DCE036562526267800D68D34 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -336,6 +344,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DCEFEB00252DA55B00D46DE5 /* XCRemoteSwiftPackageReference "SwiftClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppTelemetry/SwiftClient";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DCEFEB01252DA55B00D46DE5 /* TelemetryClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCEFEB00252DA55B00D46DE5 /* XCRemoteSwiftPackageReference "SwiftClient" */;
+			productName = TelemetryClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DCE0364D2526267800D68D34 /* Project object */;
 }
