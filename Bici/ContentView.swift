@@ -9,6 +9,7 @@ import SwiftUI
 import CoreLocation
 import Combine
 import MapKit
+import TelemetryClient
 
 struct ContentView: View {
     
@@ -22,6 +23,7 @@ struct ContentView: View {
 }
 
 struct ContentView2: View {
+    @EnvironmentObject var telemetryManager: TelemetryManager
     
     let numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
@@ -105,6 +107,8 @@ struct ContentView2: View {
                 courseString = directionString(from: location.course)
                 speedString = location.speed >= 0 ? "\(numberFormatter.string(from: NSNumber(value: Double(location.speed * 3.6))) ?? "/")" : "0.0"
                 locationString = String(format: "%.5f,%.5f %@", location.coordinate.latitude, location.coordinate.longitude, location.timestamp.description)
+                
+                telemetryManager.send(TelemetrySignal.gpsUpdateReceived.rawValue)
             }
             .onAppear() {
                 UIApplication.shared.isIdleTimerDisabled = true
