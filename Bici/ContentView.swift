@@ -23,8 +23,6 @@ struct ContentView: View {
 }
 
 struct ContentView2: View {
-    @EnvironmentObject var telemetryManager: TelemetryManager
-    
     let numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
@@ -108,7 +106,7 @@ struct ContentView2: View {
                 speedString = location.speed >= 0 ? "\(numberFormatter.string(from: NSNumber(value: Double(location.speed * 3.6))) ?? "/")" : "0.0"
                 locationString = String(format: "%.5f,%.5f %@", location.coordinate.latitude, location.coordinate.longitude, location.timestamp.description)
                 
-                telemetryManager.send(TelemetrySignal.gpsUpdateReceived.rawValue)
+                TelemetryManager.shared.send(TelemetrySignal.gpsUpdateReceived.rawValue)
             }
             .onAppear() {
                 UIApplication.shared.isIdleTimerDisabled = true

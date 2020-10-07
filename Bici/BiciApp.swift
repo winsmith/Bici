@@ -10,15 +10,17 @@ import TelemetryClient
 
 @main
 struct BiciApp: App {
-    let telemetryManager: TelemetryManager = TelemetryManager(configuration: TelemetryManagerConfiguration(appID: "B223CCDB-2348-4847-8011-BD819EB63301"))
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(telemetryManager)
                 .onAppear() {
-                    telemetryManager.send(TelemetrySignal.appLaunchedRegularly.rawValue)
+                    TelemetryManager.shared.send(TelemetrySignal.appLaunchedRegularly.rawValue)
                 }
         }
+    }
+    
+    init() {
+        let configuration = TelemetryManagerConfiguration(appID: "B223CCDB-2348-4847-8011-BD819EB63301")
+        TelemetryManager.initialize(with: configuration)
     }
 }
